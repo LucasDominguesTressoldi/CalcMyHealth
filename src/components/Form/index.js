@@ -93,10 +93,16 @@ export default function Form() {
         </View>
       )}
       <FlatList
-        style={styles.listImc}
+        showsVerticalScrollIndicator={false}
+        style={styles.listImcs}
         data={imcList.reverse()}
         renderItem={({ item }) => {
-          return <Text>Resultado IMC = {item.imc}</Text>;
+          return (
+            <Text style={styles.resultImcItem}>
+              <Text style={styles.textResultItemList}>Resultado IMC = </Text>
+              {item.imc}
+            </Text>
+          );
         }}
         keyExtractor={(item) => item.id}
       ></FlatList>
