@@ -5,7 +5,7 @@ import styles from "./style";
 export default function ResultImc(props) {
   const onShare = async () => {
     const result = await Share.share({
-      message: "Meu imc hoje é: " + props.resultImc,
+      message: "My BMI today is: " + props.resultImc,
     });
   };
 

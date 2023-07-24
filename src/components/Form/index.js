@@ -17,7 +17,7 @@ export default function Form() {
   const [weight, setWeight] = useState(null);
   const [messageImc, setMessageImc] = useState("Preencha o peso e a altura");
   const [imc, setImc] = useState(null);
-  const [textButton, setTextButton] = useState("Calcular");
+  const [textButton, setTextButton] = useState("Calculate");
   const [errorMessage, setErrorMessage] = useState(null);
   const [imcList, setImcList] = useState([]);
 
@@ -31,7 +31,7 @@ export default function Form() {
   function verificationImc() {
     if (imc === null) {
       Vibration.vibrate();
-      setErrorMessage("* Campo obrigatório");
+      setErrorMessage("* Required field");
     }
   }
 
@@ -41,14 +41,14 @@ export default function Form() {
       imcCalculator();
       setHeight(null);
       setWeight(null);
-      setMessageImc("Seu imc é igual:");
-      setTextButton("Calcular Novamente");
+      setMessageImc("Your BMI is equal to:");
+      setTextButton("Calculate again");
       setErrorMessage(null);
     } else {
       verificationImc();
       setImc(null);
-      setTextButton("Calcular");
-      setMessageImc("Preencha o peso e a altura");
+      setTextButton("Calculate");
+      setMessageImc("Fill in the weight and height");
     }
   }
 
@@ -56,7 +56,7 @@ export default function Form() {
     <View style={styles.formContext}>
       {imc == null ? (
         <Pressable onPress={Keyboard.dismiss} style={styles.form}>
-          <Text style={styles.formLabel}>Altura</Text>
+          <Text style={styles.formLabel}>Height</Text>
           <Text style={styles.errorMessage}>{errorMessage}</Text>
           <TextInput
             onChangeText={setHeight}
@@ -65,7 +65,7 @@ export default function Form() {
             keyboardType="numeric"
             style={styles.input}
           />
-          <Text style={styles.formLabel}>Peso</Text>
+          <Text style={styles.formLabel}>Weight</Text>
           <Text style={styles.errorMessage}>{errorMessage}</Text>
           <TextInput
             onChangeText={setWeight}
@@ -99,7 +99,7 @@ export default function Form() {
         renderItem={({ item }) => {
           return (
             <Text style={styles.resultImcItem}>
-              <Text style={styles.textResultItemList}>Resultado IMC = </Text>
+              <Text style={styles.textResultItemList}>Result BMI = </Text>
               {item.imc}
             </Text>
           );

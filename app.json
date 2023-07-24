@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AwesomeProject",
-    "slug": "AwesomeProject",
+    "name": "CalcMyHealth",
+    "slug": "CalcMyHealth",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,7 +22,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.lucastressoldi.watertimer",
+      "package": "com.lucastressoldi.calcmyhealth",
       "VersionCode": 1
     },
     "web": {
